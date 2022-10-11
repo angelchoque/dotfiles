@@ -1,0 +1,151 @@
+configuration {
+	font: "CascadiaCode bold 10";
+	display-drun: "舘";
+	drun-display-format: "{name}";
+	disable-history: false;
+	fullscreen: true;
+	hide-scrollbar: true;
+	modi: "window,run,drun";
+	show-icons: true;
+}
+
+* {
+	// background: #10081499;
+	background: #111B2430;
+	backgroond: #00000000;
+	foreground: #E7D9EA;
+	border: #A162F7ff;
+	border-alt: #F9CEEE;
+	urgent: #EAC935FF;
+}
+
+window {
+	transparency: "real";
+	background-color: @background;
+	text-color: @foreground;
+	border: 0.3% 0.3% 0.3% 0.3%;
+	border-radius: 0;
+	width: 95%;
+	height: 88%;
+	location: center;
+	x-offset: 0;
+	y-offset: 0;
+}
+
+prompt {
+	enabled: true;
+	padding: 0% 1% 0% 0%;
+	background-color: @backgroond;
+	text-color: @foreground;
+	font: "Hack Nerd Font mono 12";
+}
+
+entry {
+	background-color: @backgroond;
+	text-color: @foreground;
+	placeholder-color: @foreground;
+	expand: true;
+	horizontal-align: 0;
+	placeholder: "";
+	padding: 0.15% 0% 0% 0%;
+	blink: true;
+}
+
+inputbar {
+	children: [ prompt, entry ];
+	background-color: @backgroond;
+	text-color: @foreground;
+	expand: false;
+	border: 0.3% 0.3% 0.3% 0.3% ;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @border-alt;
+	margin: 0;
+	padding: 1%;
+	position: center;
+}
+
+listview {
+	background-color: @backgroond;
+	columns: 9;
+	lines: 9;
+	spacing: 1%;
+	cycle: true;
+	dynamic: true;
+	layout: vertical;
+}
+
+mainbox {
+	background-color: @background;
+	border: 0;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @border-alt;
+	children: [ inputbar, listview ];
+	spacing: 2%;
+	padding: 10% 3%;
+}
+
+element {
+	background-color: @backgroond;
+	text-color: @foreground;
+	orientation: vertical;
+	border-radius: 0%;
+	padding: 1% 0% 1% 0%;
+}
+
+element-icon {
+	background-color: @backgroond;
+	size: 48px;
+}
+
+element-text {
+	background-color: @backgroond;
+	horizontal-align: 0.5;
+	text-color: @foreground;
+	expand: true;
+	vertical-align: 0.5;
+	margin: 0.5% 1% 0% 1%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+	background-color: @urgent;
+	text-color: @foreground;
+	border-radius: 1%;
+}
+
+element normal.active,
+element alternate.active {
+	background-color: @backgroond;
+	text-color: @foreground;
+}
+
+element selected {
+	background-color: @backgroond;
+	text-color: @foreground;
+	border: 0% 0% 0.3% 0%;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @border-alt;
+}
+
+element-icon selected {
+	background-color: @backgroond;
+}
+
+element-text selected {
+	background-color: @backgroond;
+	text-color: @foreground;
+	expand: true;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	margin: 0.5% 1% 0% 1%;
+}
+
+element selected.urgent {
+	background-color: @urgent;
+	text-color: @foreground;
+}
+
+element selected.active {
+	background-color: @backgroond;
+	color: @foreground;
+}

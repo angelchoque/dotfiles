@@ -1,0 +1,16 @@
+;background = ${xrdb:color0:#222}
+; background = #aa000000
+background = #aa341210
+background-alt = #22B983FF
+;foreground = ${xrdb:color7:#222}
+; foreground = #3AB0FF
+; foreground = #51557E
+foreground = #FFFFFF
+; foreground-alt = #548CFF
+; foreground-alt = #D61C4E
+foreground-alt = #FF0063
+foreground-alt-2 = #454951
+primary = #2E0249
+;primary = #A7B6C7
+secondary = #e60053
+alert = #C7BBC2

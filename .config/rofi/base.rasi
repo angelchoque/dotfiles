@@ -1,0 +1,143 @@
+configuration {
+	font: "Hack Nerd Font mono 10";
+	display-window: "舘";
+	drun-display-format: "{name}";
+	disable-history: true;
+	fullscreen: true;
+	hide-scrollbar: true;
+	modi: "window,run,drun";
+	show-icons: false;
+}
+
+* {
+	background: #000000ff;
+	backgroond: #00000000;
+	foreground: #FEFFF1ff;
+	border: #A162F7ff;
+	border-alt: #44ffdfff;
+	urgent: #EAC935FF;
+}
+
+window {
+	transparency: "real";
+	background-color: @background;
+	text-color: @foreground;
+	border: 0;
+	border-radius: 8 0 0 0;
+	location: west;
+	width: 30%;
+	height: 70%;
+	x-offset: 4;
+	y-offset: 0;
+}
+
+prompt {
+	enabled: true;
+	padding: 0% 1% 0% 0%;
+	background-color: @backgroond;
+	text-color: @foreground;
+	font: "Hack Nerd Font mono 12";
+}
+
+entry {
+	background-color: @backgroond;
+	text-color: @foreground;
+	placeholder-color: @foreground;
+	expand: true;
+	horizontal-align: 0;
+	placeholder: "";
+	padding: 0.15% 0% 0% 0%;
+	blink: true;
+}
+
+inputbar {
+	children: [ prompt, entry ];
+	background-color: @backgroond;
+	text-color: @foreground;
+	expand: false;
+	border: 0% 0% 0.3% 0%;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @border-alt;
+	margin: 0;
+	padding: 1%;
+	position: center;
+}
+
+listview {
+	background-color: @backgroond;
+	columns: 1;
+	lines: 10;
+	spacing: 1%;
+	cycle: true;
+	dynamic: true;
+	layout: vertical;
+}
+
+mainbox {
+	background-color: @background;
+	border: 0;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @border-alt;
+	children: [ listview ];
+	spacing: 2%;
+	padding: 10% 1%;
+}
+
+element {
+	background-color: @backgroond;
+	text-color: @foreground;
+	orientation: vertical;
+	border-radius: 0%;
+	padding: 1% 0% 1% 0%;
+}
+
+element-text {
+	background-color: @backgroond;
+	text-color: @foreground;
+	expand: true;
+	vertical-align: 0.5;
+	margin: 0.5% 1% 0% 1%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+	background-color: @urgent;
+	text-color: @foreground;
+	border-radius: 1%;
+}
+
+element normal.active,
+element alternate.active {
+	background-color: @backgroond;
+	text-color: @foreground;
+}
+
+element selected {
+	background-color: @backgroond;
+	text-color: @foreground;
+	border: 0% 0% 0.3% 0%;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @border-alt;
+}
+
+element-icon selected {
+	background-color: @backgroond;
+}
+
+element-text selected {
+	background-color: @backgroond;
+	text-color: @foreground;
+	expand: true;
+	vertical-align: 0.5;
+	margin: 0.5% 1% 0% 1%;
+}
+
+element selected.urgent {
+	background-color: @urgent;
+	text-color: @foreground;
+}
+
+element selected.active {
+	background-color: @backgroond;
+	color: @foreground;
+}
